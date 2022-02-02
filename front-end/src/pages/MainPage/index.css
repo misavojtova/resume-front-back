@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  height: auto;
+  background-image: url("../../images/mobile.png");
+  overscroll-behavior: auto;
+  background-attachment: fixed;
+  background-position: top;
+}
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "AbelRegular";
+}
+
+.video {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+.main-wrapper {
+  border-radius: 3rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 950px;
+  min-width: 850px;
+  width: 62vw;
+  height: 80vh;
+  background-color: #242b42ab;
+  position: relative;
+}
+
+.my-name {
+  position: absolute;
+  right: 10%;
+  bottom: 5px;
+  color: white;
+}
+
+/* "mobile" from 800px */
+@media only screen and (max-width: 890px) {
+  html {
+    background-image: none;
+    background: linear-gradient(
+      90deg,
+      rgba(205, 214, 219, 1) 18%,
+      rgba(213, 221, 226, 1) 59%,
+      rgba(213, 221, 226, 1) 95%
+    );
+  }
+  .my-name {
+    color: #242b42ab;
+    bottom: 10px;
+  }
+  .app {
+    height: 100%;
+  }
+
+  .main-wrapper {
+    height: auto;
+    width: 100%;
+    display: block;
+    border-radius: 0;
+    max-width: initial;
+    min-width: initial;
+    background-color: transparent;
+  }
+  #root {
+    overflow-x: hidden;
+  }
+}

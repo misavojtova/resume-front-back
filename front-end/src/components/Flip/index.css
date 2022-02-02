@@ -1,0 +1,162 @@
+.flip-card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height: 67vh;
+  min-height: 478px;
+  width: 45vw;
+  min-width: 640px;
+}
+
+.flip-container {
+  min-height: 230px;
+  min-width: 184px;
+  height: 32vh;
+  width: 12vw;
+  perspective: 1000px;
+}
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-container:nth-child(2) img {
+  object-position: center;
+}
+
+.flip-container:hover .flip-card {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.back {
+  background-color: #1a2036;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+  padding: 0.2rem;
+}
+
+.front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.demo-text {
+  color: #eee;
+  font-family: "AbelRegular";
+  font-size: 1rem;
+}
+.flip-btn-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+}
+.demo-btn {
+  border-radius: 1rem;
+  border: none;
+  padding: 0.5rem;
+  background-color: white;
+  transition: background-color 0.25s ease-in, transform 0.25s ease-in;
+}
+.hub-btn > svg {
+  font-size: 2rem;
+  color: white;
+  display: flex;
+  transition: color 0.25s ease-in, transform 0.25s ease-in;
+}
+
+.demo-btn a:visited {
+  color: black;
+}
+.demo-btn a {
+  color: #1a2036;
+}
+.demo-btn:hover {
+  transform: scale(1.15);
+  background-color: #b9990b;
+}
+.hub-btn > svg:hover {
+  transform: scale(1.15);
+  color: #b9990b;
+}
+
+@media only screen and (max-width: 890px) {
+  .flip-container {
+    aspect-ratio: attr(16) / attr(10);
+    aspect-ratio: 16/10;
+    background-color: #1a2036;
+    max-height: 300px;
+    min-height: 215px;
+    width: 75%;
+    max-width: 430px;
+    min-width: 350px;
+    margin: 2rem;
+    display: flex;
+    border-radius: 1rem;
+    overflow: hidden;
+    height: auto;
+  }
+  .flip-card {
+    display: flex;
+    height: initial;
+  }
+  .front {
+    position: initial;
+    width: 50%;
+  }
+  .back {
+    width: 50%;
+    padding: 2%;
+    position: initial;
+    transform: initial;
+  }
+  .flip-container:hover .flip-card {
+    transform: initial;
+  }
+  .flip-card-wrapper {
+    height: auto;
+    width: auto;
+    min-width: auto;
+    min-height: auto;
+    padding: 3rem 0;
+  }
+
+  .flip-btn-wrap {
+    width: 90%;
+  }
+  .demo-btn {
+    background-color: #b9990b;
+    color: #1a2036;
+    transition: none;
+  }
+  .hub-btn > svg:hover {
+    transform: none;
+    color: #b9990b;
+  }
+  .hub-btn > svg {
+    color: #b9990b;
+  }
+
+  .demo-btn:hover {
+    transform: none;
+  }
+}

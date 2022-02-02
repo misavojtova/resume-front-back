@@ -1,0 +1,55 @@
+.navigation {
+  background-color: #1a2036;
+  height: 80vh;
+  width: 3rem;
+}
+
+.icons-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+}
+
+.icons-wrapper svg {
+  font-size: 2rem;
+  color: white;
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+.icons-wrapper svg:hover {
+  transform: scale(1.2);
+  color: #b9990b;
+}
+
+@media only screen and (max-width: 890px) {
+  .navigation {
+    background-color: #1a2036;
+    position: fixed;
+    z-index: 2;
+  }
+
+  .icons-wrapper {
+    flex-direction: row;
+    height: 3.2rem;
+    justify-content: space-around;
+  }
+  .icons-wrapper svg {
+    color: #b9990b;
+    transition: none;
+  }
+  .icons-wrapper svg:hover {
+    transform: none;
+  }
+  .navigation.top {
+    top: 0;
+    height: 3.2rem;
+    width: 50%;
+  }
+  .navigation.bottom {
+    height: 3.2rem;
+    width: 50%;
+    top: 0;
+    right: 0;
+  }
+}
