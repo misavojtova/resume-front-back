@@ -1,11 +1,14 @@
 .flip-card-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  flex-direction: column;
+  gap: 3% 5%;
   height: 67vh;
   min-height: 478px;
   width: 45vw;
   min-width: 640px;
+  scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 .flip-container {
@@ -43,7 +46,7 @@
 }
 
 .back {
-  background-color: #1a2036;
+  background-color: var(--main-col);
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
@@ -88,7 +91,7 @@
   color: black;
 }
 .demo-btn a {
-  color: #1a2036;
+  color: var(--main-col);
 }
 .demo-btn:hover {
   transform: scale(1.15);
@@ -103,7 +106,7 @@
   .flip-container {
     aspect-ratio: attr(16) / attr(10);
     aspect-ratio: 16/10;
-    background-color: #1a2036;
+    background-color: var(--main-col);
     max-height: 300px;
     min-height: 215px;
     width: 75%;
@@ -123,6 +126,7 @@
     position: initial;
     width: 50%;
   }
+
   .back {
     width: 50%;
     padding: 2%;
@@ -145,7 +149,7 @@
   }
   .demo-btn {
     background-color: #b9990b;
-    color: #1a2036;
+    color: var(--main-col);
     transition: none;
   }
   .hub-btn > svg:hover {

@@ -1,5 +1,5 @@
 .navigation {
-  background-color: #1a2036;
+  background-color: var(--main-col);
   height: 80vh;
   width: 3rem;
 }
@@ -24,7 +24,7 @@
 
 @media only screen and (max-width: 890px) {
   .navigation {
-    background-color: #1a2036;
+    background-color: var(--main-col);
     position: fixed;
     z-index: 2;
   }

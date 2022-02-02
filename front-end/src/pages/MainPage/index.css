@@ -88,3 +88,10 @@ html {
     overflow-x: hidden;
   }
 }
+
+.arrows {
+  position: absolute;
+  font-size: 2rem;
+  bottom: 0;
+  color: var(--main-col);
+}
