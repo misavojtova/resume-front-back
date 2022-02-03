@@ -1,5 +1,7 @@
 import { BsGithub } from "react-icons/bs";
+import { MdDeleteForever } from "react-icons/md";
 import "./index.css";
+
 function Flip({ photo, children, href, github }) {
   return (
     <div className='flip-container'>
@@ -11,6 +13,9 @@ function Flip({ photo, children, href, github }) {
         <div className='back'>
           <div className='demo-text'>{children}</div>
           <div className='flip-btn-wrap'>
+            <button className='delete-btn'>
+              <MdDeleteForever />
+            </button>
             <button className='demo-btn'>
               <a href={href} target='_blank' rel='noreferrer'>
                 Live Demo

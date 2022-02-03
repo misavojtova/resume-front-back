@@ -71,7 +71,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 80%;
+  width: 95%;
 }
 .demo-btn {
   border-radius: 1rem;
@@ -100,6 +100,18 @@
 .hub-btn > svg:hover {
   transform: scale(1.15);
   color: #b9990b;
+}
+
+.delete-btn {
+  background: none;
+  font-size: 2rem;
+  color: white;
+  border: none;
+}
+
+.delete-btn:hover {
+  transform: scale(1.15);
+  color: brown;
 }
 
 @media only screen and (max-width: 890px) {
@@ -141,12 +153,10 @@
     width: auto;
     min-width: auto;
     min-height: auto;
+    align-items: center;
     padding: 3rem 0;
   }
 
-  .flip-btn-wrap {
-    width: 90%;
-  }
   .demo-btn {
     background-color: #b9990b;
     color: var(--main-col);
@@ -157,6 +167,10 @@
     color: #b9990b;
   }
   .hub-btn > svg {
+    color: #b9990b;
+  }
+
+  .delete-btn {
     color: #b9990b;
   }
 

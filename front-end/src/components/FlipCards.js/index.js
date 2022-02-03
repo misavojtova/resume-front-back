@@ -1,46 +1,48 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Flip from "../../components/Flip";
 import "./index.css";
 import FormUpdate from "../FormUpdate";
-import LoadingContext from "../../context/LoadingContext.js";
+
 function FlipCards() {
-  const [result, setResult] = useState("");
-
+  const [flips, setFlips] = useState("");
   const [active, setActive] = useState(false);
-  const cotx = useContext(LoadingContext);
 
-  const getProjects = async () => {
+  const getProjects = async (method) => {
     try {
-      cotx.setLoading(true);
-      const project = await axios.get("http://localhost:5000/api/projects");
-      setResult(project.data);
-      console.log("getprojects");
+      if (method === "get") {
+        const project = await axios.get("http://localhost:5000/api/projects");
+        setFlips(project.data);
+        console.log("getprojects");
+      } else {
+        const deleted = await axios.delete(
+          "http://localhost:5000/api/projects"
+        );
+        console.log(deleted);
+      }
     } catch (error) {
       console.log(error);
-    } finally {
-      cotx.setLoading(false);
     }
   };
   useEffect(() => {
-    getProjects();
+    getProjects("get");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  console.log("loading", cotx.loading);
-
+  console.log({ flips });
   return (
     <>
-      {result &&
+      {flips &&
         !active &&
-        result.map((res, i) => {
+        flips.map((flip) => {
           return (
             <Flip
-              key={i}
-              href={res.liveDemo}
-              photo={res.image}
-              github={res.githubRepo}
+              getProjects={getProjects}
+              key={flip.id}
+              href={flip.liveDemo}
+              photo={flip.image}
+              github={flip.githubRepo}
             >
-              <p>{res.description}</p>
+              <p>{flip.description}</p>
             </Flip>
           );
         })}

@@ -28,7 +28,9 @@ function FormUpdate({ setActive, getProjects }) {
         onSubmit={onSubmit}
       >
         <Form className='form-wrap'>
-          <button onClick={() => setActive(false)}>Close Input</button>
+          <button type='button' onClick={() => setActive(false)}>
+            Close Input
+          </button>
           <div className='input-wrap'>
             {inputFields.map((field, i) => {
               return (
