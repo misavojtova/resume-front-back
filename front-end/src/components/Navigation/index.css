@@ -19,7 +19,7 @@
 }
 .icons-wrapper svg:hover {
   transform: scale(1.2);
-  color: #b9990b;
+  color: var(--gold);
 }
 
 @media only screen and (max-width: 890px) {
@@ -35,7 +35,7 @@
     justify-content: space-around;
   }
   .icons-wrapper svg {
-    color: #b9990b;
+    color: var(--gold);
     transition: none;
   }
   .icons-wrapper svg:hover {

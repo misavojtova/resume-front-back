@@ -95,11 +95,11 @@
 }
 .demo-btn:hover {
   transform: scale(1.15);
-  background-color: #b9990b;
+  background-color: var(--gold);
 }
 .hub-btn > svg:hover {
   transform: scale(1.15);
-  color: #b9990b;
+  color: var(--gold);
 }
 
 .delete-btn {
@@ -158,20 +158,20 @@
   }
 
   .demo-btn {
-    background-color: #b9990b;
+    background-color: var(--gold);
     color: var(--main-col);
     transition: none;
   }
   .hub-btn > svg:hover {
     transform: none;
-    color: #b9990b;
+    color: var(--gold);
   }
   .hub-btn > svg {
-    color: #b9990b;
+    color: var(--gold);
   }
 
   .delete-btn {
-    color: #b9990b;
+    color: var(--gold);
   }
 
   .demo-btn:hover {

@@ -40,5 +40,11 @@ const validationSchema = Yup.object().shape({
   liveDemo: Yup.string().max(200),
   githubRepo: Yup.string().required().max(200),
 });
+const updateSchema = Yup.object().shape({
+  image: Yup.string().max(250),
+  description: Yup.string().min(10).max(400),
+  liveDemo: Yup.string().max(200),
+  githubRepo: Yup.string().max(200),
+});
 
-export { initialValues, validationSchema, inputFields };
+export { initialValues, validationSchema, inputFields, updateSchema };

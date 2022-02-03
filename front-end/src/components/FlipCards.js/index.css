@@ -1,13 +1,21 @@
-.add-btn {
-  width: 15%;
-  padding: 0.5%;
-  border-radius: 20px;
-  background: none;
-  border: 1px solid white;
-  cursor: pointer;
+/* .btn {
+  border-radius: 1rem;
+  border: none;
+  padding: 0.1rem 0.5rem;
+  background-color: white;
+  transition: background-color 0.25s ease-in, transform 0.25s ease-in;
+  margin-left: 5px;
+}
+.btn:hover {
+  transform: scale(1.15);
 }
 
 .wrap-btns {
   position: absolute;
   top: 2%;
-}
+  left: 0;
+  padding: 0 85px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+} */

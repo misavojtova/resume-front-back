@@ -63,6 +63,40 @@ const addProject = async (req, res) => {
   }
 };
 
+const UpdateProject = async (req, res) => {
+  const { image, description, liveDemo, githubRepo } = req.body;
+  const fieldsToUpdate = {};
+  const [[foundProject]] = await connection.query(
+    "select * from projects where id = ?",
+    [req.params.id]
+  );
+
+  if (image && image !== "" && image !== foundProject.image)
+    fieldsToUpdate.image = image;
+  if (
+    description &&
+    description !== "" &&
+    description !== foundProject.description
+  )
+    fieldsToUpdate.description = description;
+  if (liveDemo && liveDemo !== "" && liveDemo !== foundProject.liveDemo)
+    fieldsToUpdate.liveDemo = liveDemo;
+  if (githubRepo && githubRepo !== "" && githubRepo !== foundProject.githubRepo)
+    fieldsToUpdate.githubRepo = githubRepo;
+
+  try {
+    const [update] = await connection.query(
+      "Update projects set ? where id = ?",
+      [fieldsToUpdate, req.params.id]
+    );
+    if (update.affectedRows === 0) res.status(404).send(`Project not found.`);
+    else res.status(200).send("Project was Updated");
+  } catch (error) {
+    res.status(500).json({ msg: error });
+    console.log(error);
+  }
+};
+
 const deleteProject = async (req, res) => {
   try {
     const project = await connection.query(
@@ -82,4 +116,5 @@ module.exports = {
   getProject,
   getAllProjectsDesc,
   getAllProjectsAsc,
+  UpdateProject,
 };

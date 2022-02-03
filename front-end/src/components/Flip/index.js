@@ -2,7 +2,16 @@ import { BsGithub } from "react-icons/bs";
 import { MdDeleteForever } from "react-icons/md";
 import "./index.css";
 
-function Flip({ photo, children, href, github, getProjects, id }) {
+function Flip({
+  photo,
+  children,
+  href,
+  github,
+  getProjects,
+  id,
+  setUpdate,
+  setId,
+}) {
   return (
     <div className='flip-container'>
       <div className='flip-card'>
@@ -11,6 +20,14 @@ function Flip({ photo, children, href, github, getProjects, id }) {
         </div>
 
         <div className='back'>
+          <button
+            onClick={() => {
+              setUpdate(true);
+              setId(id);
+            }}
+          >
+            Update
+          </button>
           <div className='demo-text'>{children}</div>
           <div className='flip-btn-wrap'>
             <button
