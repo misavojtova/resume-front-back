@@ -13,7 +13,7 @@ function FormUpdate({ setActive, getProjects }) {
       const res = await axios.post("http://localhost:5000/api/projects", data);
       if (res.status === 200) {
         resetForm();
-        getProjects();
+        getProjects("get");
         setActive(false);
       }
     } catch (error) {

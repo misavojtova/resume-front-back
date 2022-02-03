@@ -23,6 +23,7 @@ function MainPage({ profile }) {
 
     carousel.current.scrollLeft += carousel.current.offsetWidth;
   };
+
   return (
     <main className='app'>
       <section className='main-wrapper'>
